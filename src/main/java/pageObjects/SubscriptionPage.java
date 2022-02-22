@@ -46,17 +46,6 @@ public class SubscriptionPage extends Page {
         click(submitForm);
     }
 
-    public void fillField(List<MobileElement> list, String element, String value){
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getText().equals(element)) {
-                list.get(i).click();
-                list.get(i).clear();
-                list.get(i).sendKeys(value);
-                break;
-            }
-        }
-    }
-
 
 
 

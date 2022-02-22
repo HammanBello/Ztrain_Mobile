@@ -30,6 +30,4 @@ public class SubscriptionSteps {
     public void userShouldSeeSubscriptionError() {
         Assert.assertEquals(subscriptionPage.verifySpacePassword(),false);
     }
-
-
 }
