@@ -63,6 +63,7 @@ public class LoginPage extends Page{
 
     public boolean verifyForbiddenPassword(){
         try{
+            shortWaitUntil(visibilityOf(forbiddenPassword));
             return forbiddenPassword.isDisplayed();
         }catch (Exception e){
             return false;
@@ -71,6 +72,7 @@ public class LoginPage extends Page{
 
     public boolean verifySubmitButton(){
         try{
+            shortWaitUntil(visibilityOf(submitLoginForm));
             return submitLoginForm.isDisplayed();
         }catch (Exception e){
             return false;
@@ -84,6 +86,7 @@ public class LoginPage extends Page{
 
     public boolean verifyPresentationtext(){
         try{
+            shortWaitUntil(visibilityOf(presentation));
             return presentation.isDisplayed();
         }catch (Exception e){
             return false;

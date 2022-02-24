@@ -106,7 +106,8 @@ public class Page {
                 break;
             }
         }
-    }
+        hideKeyboard();
+ }
 
     public void actOnElementList(List<MobileElement> list, String element){
         for(int i=0; i<list.size(); i++){
@@ -134,18 +135,6 @@ public class Page {
                 ".scrollable(true).index(0))" +
                 ".scrollIntoView(new UiSelector()" +
                 ".text(\""+text+"\"))"));
-    }
-
-    public int findElement(List<MobileElement> list, String element){
-        int occurence = 0;
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getText().equals(element)) {
-                list.get(i).click();
-                occurence++;
-                break;
-            }
-        }
-        return occurence;
     }
 
     @Attachment(value = "screenshot", type = "image/png")

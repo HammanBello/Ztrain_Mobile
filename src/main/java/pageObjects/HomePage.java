@@ -3,12 +3,17 @@ package pageObjects;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+import java.util.List;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class HomePage extends Page {
 
-    @AndroidFindBy(accessibility = "Nike Sport White - Man Pant €50.5")
+    @AndroidFindBy(accessibility = "Wireless Controller for PS4™ €64.99")
     private MobileElement pantItem;
+
+    @AndroidFindBy(className = "android.view.View")
+    private List<MobileElement> item;
 
     @AndroidFindBy(accessibility = "Ajouter au panier")
     private MobileElement addToCart;
@@ -24,7 +29,8 @@ public class HomePage extends Page {
     }
 
     public void selectItem(){
-        click(pantItem);
+        scrollClick("Wireless Controller for PS4™ €64.99");
+        actOnElementList(item, "Wireless Controller for PS4™ €64.99");
     }
 
     public void addItemToCart(){

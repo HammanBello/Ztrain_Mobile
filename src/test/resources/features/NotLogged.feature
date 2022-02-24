@@ -1,8 +1,8 @@
 #Z-Train_Nocibe
-Feature: Found Products
-
-	Background:
-		Given User is on LoginPage
+#Feature: Application common user operations
+#
+#	Background:
+#		Given User is on LoginPage
 
 #	@TEST_3
 #	Scenario: Space for password on subscription
@@ -17,7 +17,7 @@ Feature: Found Products
 #		Then User should see forbidden password correct spelling
 #		And User should see submit button correct spelling
 
-  	@TEST_15
-	Scenario: Ztrain initial frame offer spelling
-		When User click on back button
-		Then User should correct presentation spelling
+#  	@TEST_15
+#	Scenario: Ztrain initial frame offer spelling
+#		When User click on back button
+#		Then User should correct presentation spelling
