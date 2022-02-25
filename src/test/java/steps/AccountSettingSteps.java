@@ -48,4 +48,19 @@ public class AccountSettingSteps {
     public void modificationsValidation() {
         Assert.assertEquals(accountSettingPage.verifyModification(),false);
     }
+
+    @When("User click again on account setting")
+    public void twiceClickOnAccountSetting() {
+        accountSettingPage.clickOnAccountSetting();
+    }
+
+    @Then("User should return on homepage view")
+    public void returnOnHomepageView() {
+        Assert.assertEquals(accountSettingPage.verifyLogOut(),false);
+    }
+
+    @Then("User should same langage for options")
+    public void sameLangageForOptions() {
+        Assert.assertEquals(accountSettingPage.verifyLogOut(),false);
+    }
 }
