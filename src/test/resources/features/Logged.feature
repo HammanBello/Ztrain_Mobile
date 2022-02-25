@@ -42,3 +42,8 @@ Feature: Application personal user operations
     When User click on account setting
     Then User should same langage for options
 
+#    Scenario: Add item to cart
+#      When User select item
+#      And User add it on cart
+#      Then User should see notification correct spelling
+

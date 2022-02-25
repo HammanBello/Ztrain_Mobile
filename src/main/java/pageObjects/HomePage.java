@@ -9,7 +9,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class HomePage extends Page {
 
-    @AndroidFindBy(accessibility = "Wireless Controller for PS4™ €64.99")
+    @AndroidFindBy(accessibility = "Nike Sport White - Man Pant €50.5")
     private MobileElement pantItem;
 
     @AndroidFindBy(className = "android.view.View")
@@ -29,8 +29,8 @@ public class HomePage extends Page {
     }
 
     public void selectItem(){
-        scrollClick("Wireless Controller for PS4™ €64.99");
-        actOnElementList(item, "Wireless Controller for PS4™ €64.99");
+        scroll("Nike Sport White - Man Pant €50.5");
+        pantItem.click();
     }
 
     public void addItemToCart(){
