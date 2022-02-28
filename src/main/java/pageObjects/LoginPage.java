@@ -93,5 +93,14 @@ public class LoginPage extends Page{
         }
     }
 
+    public boolean verifyAccountAccess(){
+        try{
+            shortWaitUntil(visibilityOf(readyButton));
+            return readyButton.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 
 }

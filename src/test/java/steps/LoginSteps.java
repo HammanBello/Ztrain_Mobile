@@ -54,4 +54,14 @@ public class LoginSteps {
     public void userShouldCorrectPresentationSpelling() {
         Assert.assertEquals(loginPage.verifyPresentationtext(),false);
     }
+
+    @And("User try to connect to his account")
+    public void userTryToConnectToHisAccount() {
+        loginPage.getLogged();
+    }
+
+    @Then("User access to his account")
+    public void accessToHisAccount() {
+        Assert.assertEquals(loginPage.verifyAccountAccess(),true);
+    }
 }
