@@ -44,7 +44,7 @@ public class AccountSettingSteps {
         accountSettingPage.fillForm();
     }
 
-    @Then("User should see modifications validated")
+    @Then("User should see modifications not validated")
     public void modificationsValidation() {
         Assert.assertEquals(accountSettingPage.verifyModification(),false);
     }
@@ -54,13 +54,13 @@ public class AccountSettingSteps {
         accountSettingPage.clickOnAccountSetting();
     }
 
-    @Then("User should return on homepage view")
-    public void returnOnHomepageView() {
-        Assert.assertEquals(accountSettingPage.verifyLogOut(),false);
-    }
-
     @Then("User should same langage for options")
     public void sameLangageForOptions() {
-        Assert.assertEquals(accountSettingPage.verifyLogOut(),false);
+        Assert.assertEquals(accountSettingPage.verifyLogOutText(),false);
+    }
+
+    @And("User click on phone back button")
+    public void userClickOnPhoneBackButton() {
+        accountSettingPage.homeBack();
     }
 }

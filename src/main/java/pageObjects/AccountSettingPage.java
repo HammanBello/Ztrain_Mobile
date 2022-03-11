@@ -9,7 +9,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class AccountSettingPage extends Page{
 
-    @AndroidFindBy(accessibility = "Log Out")
+    @AndroidFindBy(accessibility = "D\u00e9connexion")
     private MobileElement logOutButton;
 
     @AndroidFindBy(accessibility = "Mon compte")
@@ -18,7 +18,7 @@ public class AccountSettingPage extends Page{
     @AndroidFindBy(accessibility = "Ok")
     private MobileElement checkPoint;
 
-    @AndroidFindBy(accessibility = "Mofifiez-vos informations")
+    @AndroidFindBy(accessibility = "Vos Informations")
     private MobileElement accountInfo;
 
     @AndroidFindBy(accessibility = "Mofifier")
@@ -27,7 +27,7 @@ public class AccountSettingPage extends Page{
     @AndroidFindBy(className = "android.widget.ImageView")
     private List<MobileElement> formField;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
     private MobileElement accountView;
 
     private String spaceText = "        ";
@@ -38,6 +38,7 @@ public class AccountSettingPage extends Page{
 
     public void clickOnLogOut(){
         click(logOutButton);
+        isConnected = 0;
     }
 
     public void clickOnMyAccount(){
@@ -53,6 +54,19 @@ public class AccountSettingPage extends Page{
         }
     }
 
+    public void homeBack(){
+        driver.navigate().back();
+    }
+
+    public boolean verifyLogOutText(){
+        try{
+            shortWaitUntil(visibilityOf(logOutButton));
+            return logOutButton.getAttribute("content-desc").contains("out");
+        }catch (Exception e){
+            return false;
+        }
+    }
+
     public boolean verifyTextSpelling(){
         try{
             shortWaitUntil(visibilityOf(accountInfo));
@@ -63,7 +77,7 @@ public class AccountSettingPage extends Page{
     }
 
     public void fillForm(){
-        fillField(formField,"Nom",spaceText);
+        fillField(formField,"Noms",spaceText);
         fillField(formField,"Prénom",spaceText);
         fillField(formField,"Adresse",spaceText);
         click(submitButton);

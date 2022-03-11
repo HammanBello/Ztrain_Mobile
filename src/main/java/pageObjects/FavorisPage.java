@@ -7,8 +7,11 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class FavorisPage extends Page{
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]")
     private MobileElement favorisView;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
+    private MobileElement accountView;
 
     public void clickOnFavoris(){
         click(favorisView);
@@ -16,8 +19,8 @@ public class FavorisPage extends Page{
 
     public boolean verifyFavorisContain(){
         try{
-            shortWaitUntil(visibilityOf(favorisView));
-            return (favorisView.isDisplayed());
+            shortWaitUntil(visibilityOf(accountView));
+            return (favorisView.isDisplayed() && accountView.isDisplayed());
         }catch (Exception e){
             return false;
         }
