@@ -42,7 +42,7 @@ public class LoginSteps {
 
     @And("User is connected to his account")
     public void connectedOnHisAccount() {
-        loginPage.getLogged();
+        loginPage.connexion();
     }
 
     @When("User click on back button")
@@ -52,6 +52,22 @@ public class LoginSteps {
 
     @Then("User should correct presentation spelling")
     public void userShouldCorrectPresentationSpelling() {
-        Assert.assertEquals(loginPage.verifyPresentationtext(),false);
+        Assert.assertEquals(loginPage.verifyPresentationText(),true);
+    }
+
+    @And("User try to connect to his account")
+    public void userTryToConnectToHisAccount() {
+        loginPage.goToLoginPage();
+        loginPage.getLogged();
+    }
+
+    @Then("User access to his account")
+    public void accessToHisAccount() {
+        Assert.assertEquals(loginPage.verifyAccountAccess(),true);
+    }
+
+    @When("User look this page")
+    public void userLookThisPage() {
+        System.out.println("you are on initial page");
     }
 }

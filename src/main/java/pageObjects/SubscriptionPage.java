@@ -15,7 +15,7 @@ public class SubscriptionPage extends Page {
     @AndroidFindBy(className = "android.widget.ImageView")
     private List<MobileElement> formField;
 
-    @AndroidFindBy(accessibility = "Allez au site")
+    @AndroidFindBy(accessibility = "Aller au site")
     private MobileElement readyButton;
 
     @AndroidFindBy(accessibility = "Continuer")

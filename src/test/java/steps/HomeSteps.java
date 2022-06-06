@@ -35,4 +35,9 @@ public class HomeSteps {
     public void userIsOnHomepage() {
         homePage.goToHomeboard();
     }
+
+    @Then("User should return on homepage view")
+    public void returnOnHomepageView() {
+        Assert.assertEquals(homePage.verifyHomeView(),true);
+    }
 }
