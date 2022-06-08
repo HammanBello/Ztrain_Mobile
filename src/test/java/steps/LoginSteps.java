@@ -32,12 +32,12 @@ public class LoginSteps {
 
     @Then("User should see forbidden password correct spelling")
     public void forbiddenPasswordCorrectSpelling() {
-        Assert.assertEquals(loginPage.verifyForbiddenPassword(),true);
+        Assert.assertEquals(loginPage.verifyForbiddenPassword(), true);
     }
 
     @And("User should see submit button correct spelling")
     public void submitButtonCorrectSpelling() {
-        Assert.assertEquals(loginPage.verifySubmitButton(),true);
+        Assert.assertEquals(loginPage.verifySubmitButton(), true);
     }
 
     @And("User is connected to his account")
@@ -50,9 +50,17 @@ public class LoginSteps {
         loginPage.goBack();
     }
 
+    @And("User click on phone back button <{int}> time")
+    public void userClickOnPhoneBackButtonTime(int times) {
+        for (int i = 1; i <= times;i++){
+            loginPage.goBack();
+        }
+    }
+
+
     @Then("User should correct presentation spelling")
     public void userShouldCorrectPresentationSpelling() {
-        Assert.assertEquals(loginPage.verifyPresentationText(),true);
+        Assert.assertEquals(loginPage.verifyPresentationText(), true);
     }
 
     @And("User try to connect to his account")
@@ -63,7 +71,7 @@ public class LoginSteps {
 
     @Then("User access to his account")
     public void accessToHisAccount() {
-        Assert.assertEquals(loginPage.verifyAccountAccess(),true);
+        Assert.assertEquals(loginPage.verifyAccountAccess(), true);
     }
 
     @When("User look this page")

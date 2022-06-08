@@ -51,14 +51,14 @@ public class HomePage extends Page {
             return false;
         }
     }
-
-    public boolean verifyHomeView(){
-        try{
-            shortWaitUntil(visibilityOf(headerCategory));
-            return headerCategory.isDisplayed()||!logOutButton.isDisplayed();
-        }catch (Exception e){
-            return false;
-        }
-    }
+//
+//    public boolean verifyAccountView(){
+//        try{
+//            shortWaitUntil(visibilityOf(headerCategory));
+//            return headerCategory.isDisplayed()||!logOutButton.isDisplayed();
+//        }catch (Exception e){
+//            return false;
+//        }
+//    }
 
 }

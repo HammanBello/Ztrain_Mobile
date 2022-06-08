@@ -78,7 +78,7 @@ public class LoginPage extends Page{
         if (isConnected == 0){
             getLogged();
             goOnDashboard();
-            isConnected++;
+ //           isConnected++;
         }
 //        driver.navigate().back();
 //        goBackMenu();

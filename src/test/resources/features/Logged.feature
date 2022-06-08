@@ -1,10 +1,10 @@
-#Z-Train
-Feature: Application personal user operations
-
-  Background:
-    Given User is on LoginPage
-    And User is connected to his account
-
+##Z-Train
+#Feature: Application personal user operations
+#
+#  Background:
+#    Given User is on LoginPage
+#    And User is connected to his account
+#
 #  @TEST_17
 #  Scenario: mix of langages
 #    When User click on account setting
@@ -14,21 +14,22 @@ Feature: Application personal user operations
 #  Scenario: frames superpositioned
 #    Given User click on account setting
 #    When User click again on account setting
-#    And User click on phone back button
-#    Then User should return on homepage view
-
-  @TEST_29
-  Scenario: favoris contain functionality
-    When User click on favoris view
-    Then User should see favoris contain
-
-  @TEST_28
-  Scenario: log-out functionality
-      And User click on account setting
-      When User click on log-out button
-      And User click on back button
-      Then User not be able to get back on account setting
+#    And User click on favoris view
+#    And User click on phone back button <3> time
+#    Then User should see favoris contain
 #
+#  @TEST_29
+#  Scenario: favoris contain functionality
+#    When User click on favoris view
+#    Then User should see favoris contain
+#
+#  @TEST_28
+#  Scenario: log-out functionality
+#      And User click on account setting
+#      When User click on log-out button
+#      And User click on back button
+#      Then User not be able to get back on account setting
+#  Non retouchés
 #  @TEST_30
 #  Scenario: sign-in after log-out
 #    And User click on account setting

@@ -36,8 +36,10 @@ public class HomeSteps {
         homePage.goToHomeboard();
     }
 
-    @Then("User should return on homepage view")
-    public void returnOnHomepageView() {
-        Assert.assertEquals(homePage.verifyHomeView(),true);
-    }
+
+
+//    @Then("User should't change view")
+//    public void returnOnAccountpageView() {
+//        Assert.assertEquals(homePage.verifyAccountView(),true);
+//    }
 }
