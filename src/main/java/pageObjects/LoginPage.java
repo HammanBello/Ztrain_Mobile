@@ -22,7 +22,7 @@ public class LoginPage extends Page{
     private MobileElement goBack;
 
     @AndroidFindBy(accessibility = "ZTrain\n" +
-            "Nous recherchons les meilleures offre pour vous")
+            "Nous recherchons les meilleures offres pour vous")
     private MobileElement presentation;
 
     @AndroidFindBy(accessibility = "S'inscrire")
@@ -31,7 +31,7 @@ public class LoginPage extends Page{
     @AndroidFindBy(accessibility = "Continuer")
     private MobileElement submitLoginForm;
 
-    @AndroidFindBy(accessibility = "Mot de passe oublier")
+    @AndroidFindBy(accessibility = "Mot de passe oublié")
     private MobileElement forbiddenPassword;
 
     @AndroidFindBy(accessibility = "Aller au site")
@@ -41,7 +41,7 @@ public class LoginPage extends Page{
 
     private String password = "007hermann";
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[1]")
+    @AndroidFindBy(accessibility = "ZTrain Nous recherchons les meilleures offre pour vous")
     private MobileElement homeView;
 
     @AndroidFindBy(accessibility = "Game")
@@ -63,8 +63,9 @@ public class LoginPage extends Page{
     private boolean validSpellingText(){
         try {
             shortWaitUntil(visibilityOf(startButton));
-            return !presentation.isDisplayed();
+            return shortWaitUntil(visibilityOf(presentation));
         }catch(Exception e){
+            System.out.println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
             return false;
         }
     }
@@ -79,8 +80,8 @@ public class LoginPage extends Page{
             goOnDashboard();
             isConnected++;
         }
-        driver.navigate().back();
-        goBackMenu();
+//        driver.navigate().back();
+//        goBackMenu();
         //click(homeView);
     }
 
@@ -107,7 +108,7 @@ public class LoginPage extends Page{
     public boolean verifySubmitButton(){
         try{
             shortWaitUntil(visibilityOf(submitLoginForm));
-            return submitLoginForm.isDisplayed() && !submitLoginForm.getText().equals("Continue");
+            return  submitLoginForm.getText().equals("Continuer");
         }catch (Exception e){
             return false;
         }

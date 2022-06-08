@@ -32,12 +32,12 @@ public class LoginSteps {
 
     @Then("User should see forbidden password correct spelling")
     public void forbiddenPasswordCorrectSpelling() {
-        Assert.assertEquals(loginPage.verifyForbiddenPassword(),false);
+        Assert.assertEquals(loginPage.verifyForbiddenPassword(),true);
     }
 
     @And("User should see submit button correct spelling")
     public void submitButtonCorrectSpelling() {
-        Assert.assertEquals(loginPage.verifySubmitButton(),false);
+        Assert.assertEquals(loginPage.verifySubmitButton(),true);
     }
 
     @And("User is connected to his account")

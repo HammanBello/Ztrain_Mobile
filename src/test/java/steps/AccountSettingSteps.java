@@ -54,7 +54,7 @@ public class AccountSettingSteps {
         accountSettingPage.clickOnAccountSetting();
     }
 
-    @Then("User should same langage for options")
+    @Then("User should same language for options")
     public void sameLangageForOptions() {
         Assert.assertEquals(accountSettingPage.verifyLogOutText(),false);
     }

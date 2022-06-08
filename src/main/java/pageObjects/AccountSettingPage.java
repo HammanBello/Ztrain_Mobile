@@ -27,7 +27,9 @@ public class AccountSettingPage extends Page{
     @AndroidFindBy(className = "android.widget.ImageView")
     private List<MobileElement> formField;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
+    @AndroidFindBy(xpath = "\t\n" +
+            "\t\n" +
+            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
     private MobileElement accountView;
 
     private String spaceText = "        ";
