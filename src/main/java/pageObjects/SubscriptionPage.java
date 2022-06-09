@@ -2,7 +2,10 @@ package pageObjects;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
@@ -13,13 +16,15 @@ public class SubscriptionPage extends Page {
     private List<MobileElement> passwordField;
 
     @AndroidFindBy(className = "android.widget.ImageView")
-    private List<MobileElement> formField;
+    private List<MobileElement> mailField;
 
     @AndroidFindBy(accessibility = "Aller au site")
     private MobileElement readyButton;
 
     @AndroidFindBy(accessibility = "Continuer")
     private MobileElement submitForm;
+
+
 
     private String email = "merlin@gmail.com";
 
@@ -36,7 +41,25 @@ public class SubscriptionPage extends Page {
 
     public void setEmail(){
         shortWaitUntil(visibilityOf(submitForm));
-        fillField(formField,"Email",email);
+        mailField = driver.findElements(By.className("android.widget.ImageView"));
+        for (int i = 0; i < mailField.size(); i++) {
+            shortWaitUntil(visibilityOf(mailField.get(i)));
+            System.out.println(mailField.get(i).getText());
+            if (mailField.get(i).getText().equals("Email")) {
+                System.out.println(mailField.get(i).getText());
+                mailField.get(i).click();
+                System.out.println(mailField.get(i).getText());
+                mailField.get(i).clear();
+                mailField.get(i).sendKeys(email);
+                break;
+            }
+        }
+      hideKeyboard();
+//        fillField(mailField,"Email",email);
+//        fillField(mailField,"Email exemple@gmail.com",email);
+
+
+
     }
 
     public void setPassword(){
