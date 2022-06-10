@@ -29,14 +29,14 @@ public class AccountSettingSteps {
         Assert.assertEquals(accountSettingPage.verifyLogOut(),false);
     }
 
-    @And("User click on {string}")
-    public void userClickOn(String arg0) {
+    @And("User click on \"my account\"")
+    public void userClickOn() {
         accountSettingPage.clickOnMyAccount();
     }
 
     @Then("User should see correct account spelling")
     public void userShouldSeeCorrectAccountSpelling() {
-        Assert.assertEquals(accountSettingPage.verifyTextSpelling(),false);
+        Assert.assertEquals(accountSettingPage.verifyTextSpelling(),true);
     }
 
     @And("User fill fields with space")

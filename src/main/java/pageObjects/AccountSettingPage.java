@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class AccountSettingPage extends Page{
+public class AccountSettingPage extends Page {
 
     @AndroidFindBy(accessibility = "D\u00e9connexion")
     private MobileElement logOutButton;
@@ -21,82 +21,87 @@ public class AccountSettingPage extends Page{
     @AndroidFindBy(accessibility = "Vos Informations")
     private MobileElement accountInfo;
 
-    @AndroidFindBy(accessibility = "Mofifier")
+    @AndroidFindBy(accessibility = "Modifier")
     private MobileElement submitButton;
 
     @AndroidFindBy(className = "android.widget.ImageView")
     private List<MobileElement> formField;
 
-    @AndroidFindBy(xpath = "\t\n" +
-            "\t\n" +
-            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayou" +
+            "t/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/andro" +
+            "id.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
     private MobileElement accountView;
 
     private String spaceText = "        ";
 
-    public void clickOnAccountSetting(){
-        click(accountView);
+    public void clickOnAccountSetting() {
+        for (int i = 0; 10 > i; i++) {
+            try {
+                click(accountView);
+                break;
+            }
+            catch (Exception e) {
+                System.out.println(e.toString());
+            }
+        }
     }
 
-    public void clickOnLogOut(){
+    public void clickOnLogOut() {
         click(logOutButton);
         isConnected = 0;
     }
 
-    public void clickOnMyAccount(){
+    public void clickOnMyAccount() {
+        shortWaitUntil(visibilityOf(logOutButton));
         click(myAccountButton);
     }
 
-    public boolean verifyLogOut(){
-        try{
+    public boolean verifyLogOut() {
+        try {
             shortWaitUntil(visibilityOf(logOutButton));
             return logOutButton.isDisplayed();
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
-    public void homeBack(){
+    public void homeBack() {
         driver.navigate().back();
     }
 
-    public boolean verifyLogOutText(){
-        try{
+    public boolean verifyLogOutText() {
+        try {
             shortWaitUntil(visibilityOf(logOutButton));
             return logOutButton.getAttribute("content-desc").contains("out");
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
-    public boolean verifyTextSpelling(){
-        try{
+    public boolean verifyTextSpelling() {
+        try {
             shortWaitUntil(visibilityOf(accountInfo));
-            return (accountInfo.isDisplayed()&&submitButton.isDisplayed());
-        }catch (Exception e){
+            return (accountInfo.isDisplayed() && submitButton.isDisplayed());
+        } catch (Exception e) {
             return false;
         }
     }
 
-    public void fillForm(){
-        fillField(formField,"Noms",spaceText);
-        fillField(formField,"Prénom",spaceText);
-        fillField(formField,"Adresse",spaceText);
+    public void fillForm() {
+        fillField(formField, "Noms", spaceText);
+        fillField(formField, "Prénom", spaceText);
+        fillField(formField, "Adresse", spaceText);
         click(submitButton);
     }
 
-    public boolean verifyModification(){
-        try{
+    public boolean verifyModification() {
+        try {
             shortWaitUntil(visibilityOf(checkPoint));
             return checkPoint.isDisplayed();
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
-
-
-
-
 
 
 }

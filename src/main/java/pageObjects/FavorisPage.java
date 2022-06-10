@@ -7,16 +7,18 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class FavorisPage extends Page{
 
-    @AndroidFindBy(xpath = "\t\n" +
-            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout" +
+            "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android" +
+            ".view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]")
     private MobileElement favorisView;
 
-    @AndroidFindBy(xpath = "\t\n" +
-            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/" +
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/" +
             "android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View" +
             "/android.view.View/android.view.View/android.widget.ImageView[3]")
     private MobileElement accountView;
 
+    @AndroidFindBy(accessibility = "Favoris")
+    private MobileElement favorisProof;
 
             public void clickOnFavoris(){
         click(favorisView);
@@ -25,7 +27,7 @@ public class FavorisPage extends Page{
     public boolean verifyFavorisContain(){
         try{
             shortWaitUntil(visibilityOf(accountView));
-            return (favorisView.isDisplayed() && accountView.isDisplayed());
+            return mediumWaitUntil(visibilityOf(favorisProof));
         }catch (Exception e){
             return false;
         }

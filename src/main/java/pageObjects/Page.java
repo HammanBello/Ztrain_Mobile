@@ -83,6 +83,14 @@ public class Page {
             return false;
         }
     }
+    protected <V> boolean mediumWaitUntil(Function<? super WebDriver, V> isTrue) {
+        try {
+            wait.until(isTrue);
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
 
     protected void click(MobileElement element) {
         if(!shortWaitUntil(visibilityOf(element)))
@@ -108,6 +116,14 @@ public class Page {
         }
         hideKeyboard();
  }
+
+    protected void fillSingleField(MobileElement mobileElement, String value){
+            shortWaitUntil(visibilityOf(mobileElement));
+                mobileElement.click();
+                mobileElement.clear();
+                mobileElement.sendKeys(value);
+        hideKeyboard();
+    }
 
     public void actOnElementList(List<MobileElement> list, String element){
         for(int i=0; i<list.size(); i++){

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.By;
@@ -8,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class SubscriptionPage extends Page {
 
@@ -25,51 +26,54 @@ public class SubscriptionPage extends Page {
     private MobileElement submitForm;
 
 
-
-    private String email = "merlin@gmail.com";
+    private String email = "rddsdsdtzyx@fc.om";
 
     private String spacePassword = "        ";
 
-    public boolean verifySpacePassword(){
-        try{
+    public boolean verifySpacePassword() {
+        try {
             shortWaitUntil(visibilityOf(readyButton));
             return readyButton.isDisplayed();
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
 
-    public void setEmail(){
-        shortWaitUntil(visibilityOf(submitForm));
-        mailField = driver.findElements(By.className("android.widget.ImageView"));
-        for (int i = 0; i < mailField.size(); i++) {
-            shortWaitUntil(visibilityOf(mailField.get(i)));
-            System.out.println(mailField.get(i).getText());
-            if (mailField.get(i).getText().equals("Email")) {
-                System.out.println(mailField.get(i).getText());
-                mailField.get(i).click();
-                System.out.println(mailField.get(i).getText());
-                mailField.get(i).clear();
-                mailField.get(i).sendKeys(email);
-                break;
-            }
-        }
-      hideKeyboard();
-//        fillField(mailField,"Email",email);
+    public void setEmail() {
+//        MobileElement mailFieldu = driver.findElement(MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.wid" +
+//                "get.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/andr" +
+//                "oid.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android" +
+//                ".view.View/android.view.View/android.view.View[2]/android.widget.ImageView"));
+//        mediumWaitUntil(visibilityOf(mailFieldu));
+//        mailFieldu.click();
+//        mailFieldu.clear();
+//        mailFieldu.sendKeys(email);
+        for (int i = 0; 10 > i; i++){
+            try{
+        fillField(mailField,"Email",email);
+                break;}
+            catch (Exception e){
+                System.out.println(e.toString());
+            }}
+        hideKeyboard();
+
 //        fillField(mailField,"Email exemple@gmail.com",email);
 
 
-
     }
 
-    public void setPassword(){
-        fillField(passwordField,"Mot de passe",spacePassword);
-        fillField(passwordField,"Confirmer le mot de passe",spacePassword);
+    public void setPassword() {
+        for (int i = 0; 10 > i; i++){
+            try{
+        fillField(passwordField, "Mot de passe", spacePassword);
+        fillField(passwordField, "Confirmer le mot de passe", spacePassword);
+                break;}
+            catch (Exception e){
+                System.out.println(e.toString());
+            }}
         hideKeyboard();
         click(submitForm);
     }
-
-
 
 
 }

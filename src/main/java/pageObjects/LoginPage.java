@@ -1,10 +1,13 @@
 package pageObjects;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfAllElementsLocatedBy;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class LoginPage extends Page{
@@ -14,6 +17,12 @@ public class LoginPage extends Page{
 
     @AndroidFindBy(className = "android.widget.ImageView")
     private List<MobileElement> formField;
+
+    @AndroidFindBy(xpath =  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget" +
+            ".FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/andr" +
+            "oid.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ImageView[1]")
+    private MobileElement formFieldu;
+
 
     @AndroidFindBy(accessibility = "continue")
     private MobileElement startButton;
@@ -31,12 +40,6 @@ public class LoginPage extends Page{
     @AndroidFindBy(accessibility = "Mot de passe oubli\u00E9")
     private MobileElement forbiddenPassword;
 
-//    @AndroidFindBy(xpath = "//android.view.View[@content-desc='Mot de passe oubli\u00E9']")
-//    private MobileElement forbiddennPassword;
-//
-//    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
-//            +"android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView/android.widget.CheckBox/android.view.View/android.view.View[4]")
-//    private MobileElement fORGOTTENpASSWD;
     @AndroidFindBy(accessibility = "Aller au site")
     private MobileElement readyButton;
 
@@ -57,6 +60,7 @@ public class LoginPage extends Page{
 
     public void goToSubscriptionPage(){
         click(subscribeButton);
+        shortWaitUntil(visibilityOf(driver.findElement(MobileBy.AccessibilityId("Continuer"))));
     }
 
     public void goToLoginPage(){
@@ -83,18 +87,30 @@ public class LoginPage extends Page{
 
     public void connexion(){
         if (isConnected == 0){
-            getLogged();
-            goOnDashboard();
+                    getLogged();
+                    goOnDashboard();
+                      }
+
+
  //           isConnected++;
-        }
+
 //        driver.navigate().back();
 //        goBackMenu();
         //click(homeView);
     }
 
     public void getLogged(){
+//        formFieldu.click();
+        for (int i = 0; 10 > i; i++){
+        try{
         fillField(formField,"Email",email);
         fillField(passwordField,"Mot de passe",password);
+        break;}
+              catch (Exception e){
+                System.out.println(e.toString());
+            }
+
+        }
         hideKeyboard();
         click(submitLoginForm);
     }

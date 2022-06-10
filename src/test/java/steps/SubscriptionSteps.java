@@ -20,7 +20,7 @@ public class SubscriptionSteps {
     }
 
 
-    @And("User enter space lenght password")
+    @And("User enter space length password")
     public void userEnterSpaceLenghtPassword() {
         subscriptionPage.setPassword();
     }
