@@ -26,9 +26,9 @@ public class SubscriptionPage extends Page {
     private MobileElement submitForm;
 
 
-    private String email = "rddsdsdtzyx@fc.om";
+    private final String email = "rddsdsdtzyx@fc.om";
 
-    private String spacePassword = "        ";
+    private final String spacePassword = "        ";
 
     public boolean verifySpacePassword() {
         try {
@@ -53,7 +53,7 @@ public class SubscriptionPage extends Page {
         fillField(mailField,"Email",email);
                 break;}
             catch (Exception e){
-                System.out.println(e.toString());
+                System.out.println(e);
             }}
         hideKeyboard();
 
@@ -69,7 +69,7 @@ public class SubscriptionPage extends Page {
         fillField(passwordField, "Confirmer le mot de passe", spacePassword);
                 break;}
             catch (Exception e){
-                System.out.println(e.toString());
+                System.out.println(e);
             }}
         hideKeyboard();
         click(submitForm);

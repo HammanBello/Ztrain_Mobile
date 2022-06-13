@@ -3,11 +3,9 @@ package pageObjects;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.By;
 
 import java.util.List;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfAllElementsLocatedBy;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class LoginPage extends Page{
@@ -43,9 +41,9 @@ public class LoginPage extends Page{
     @AndroidFindBy(accessibility = "Aller au site")
     private MobileElement readyButton;
 
-    private String email = "zeufackp@gmail.com";
+    private final String email = "zeufackp@gmail.com";
 
-    private String password = "007hermann";
+    private final String password = "007hermann";
 
     @AndroidFindBy(accessibility = "ZTrain\nNous recherchons les meilleures offres pour vous")
     private MobileElement homeView;
@@ -104,13 +102,17 @@ public class LoginPage extends Page{
         for (int i = 0; 10 > i; i++){
         try{
         fillField(formField,"Email",email);
-        fillField(passwordField,"Mot de passe",password);
         break;}
               catch (Exception e){
-                System.out.println(e.toString());
-            }
-
-        }
+                System.out.println(e);
+            }}
+            for (int i = 0; 10 > i; i++){
+                try{
+                    fillField(passwordField,"Mot de passe",password);
+                    break;}
+                catch (Exception e){
+                    System.out.println(e);
+                }}
         hideKeyboard();
         click(submitLoginForm);
     }

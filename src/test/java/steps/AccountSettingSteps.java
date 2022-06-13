@@ -8,7 +8,7 @@ import pageObjects.AccountSettingPage;
 
 public class AccountSettingSteps {
 
-    private AccountSettingPage accountSettingPage;
+    private final AccountSettingPage accountSettingPage;
 
     public AccountSettingSteps(AccountSettingPage accountSettingPage) {
         this.accountSettingPage = accountSettingPage;
@@ -26,7 +26,7 @@ public class AccountSettingSteps {
 
     @Then("User not be able to get back on account setting")
     public void backOnAccountSetting() {
-        Assert.assertEquals(accountSettingPage.verifyLogOut(),false);
+        Assert.assertFalse(accountSettingPage.verifyLogOut());
     }
 
     @And("User click on \"my account\"")
@@ -36,7 +36,7 @@ public class AccountSettingSteps {
 
     @Then("User should see correct account spelling")
     public void userShouldSeeCorrectAccountSpelling() {
-        Assert.assertEquals(accountSettingPage.verifyTextSpelling(),true);
+        Assert.assertTrue(accountSettingPage.verifyTextSpelling());
     }
 
     @And("User fill fields with space")
@@ -46,7 +46,7 @@ public class AccountSettingSteps {
 
     @Then("User should see modifications not validated")
     public void modificationsValidation() {
-        Assert.assertEquals(accountSettingPage.verifyModification(),false);
+        Assert.assertFalse(accountSettingPage.verifyModification());
     }
 
     @When("User click again on account setting")
@@ -56,7 +56,7 @@ public class AccountSettingSteps {
 
     @Then("User should same language for options")
     public void sameLangageForOptions() {
-        Assert.assertEquals(accountSettingPage.verifyLogOutText(),false);
+        Assert.assertFalse(accountSettingPage.verifyLogOutText());
     }
 
     @And("User click on phone back button")

@@ -32,7 +32,7 @@ public class AccountSettingPage extends Page {
             "id.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[3]")
     private MobileElement accountView;
 
-    private String spaceText = "        ";
+    private final String  spaceText = "        ";
 
     public void clickOnAccountSetting() {
         for (int i = 0; 10 > i; i++) {
@@ -41,7 +41,7 @@ public class AccountSettingPage extends Page {
                 break;
             }
             catch (Exception e) {
-                System.out.println(e.toString());
+                System.out.println(e);
             }
         }
     }
@@ -88,9 +88,34 @@ public class AccountSettingPage extends Page {
     }
 
     public void fillForm() {
+        for (int i = 0; 10 > i; i++){
+            try{
         fillField(formField, "Noms", spaceText);
-        fillField(formField, "Prénom", spaceText);
-        fillField(formField, "Adresse", spaceText);
+                break;}
+            catch (Exception e){
+                System.out.println(e);
+            }}
+        for (int i = 0; 10 > i; i++){
+            try{
+                fillField(formField, "Pr\u00E9nom", spaceText);
+                break;}
+            catch (Exception e){
+                System.out.println(e);
+            }}
+        for (int i = 0; 10 > i; i++){
+            try{
+                fillField(formField, "Adresse", spaceText);
+                break;}
+            catch (Exception e){
+                System.out.println(e);
+            }}
+        for (int i = 0; 10 > i; i++){
+            try{
+                fillField(formField, "Num\u00E9ro", spaceText);
+                break;}
+            catch (Exception e){
+                System.out.println(e);
+            }}
         click(submitButton);
     }
 

@@ -9,7 +9,7 @@ import pageObjects.LoginPage;
 
 public class LoginSteps {
 
-    private LoginPage loginPage;
+    private  LoginPage loginPage;
 
     public LoginSteps(LoginPage loginPage) {
         this.loginPage = loginPage;
@@ -32,12 +32,12 @@ public class LoginSteps {
 
     @Then("User should see forbidden password correct spelling")
     public void forbiddenPasswordCorrectSpelling() {
-        Assert.assertEquals(loginPage.verifyForbiddenPassword(), true);
+        Assert.assertTrue(loginPage.verifyForbiddenPassword());
     }
 
     @And("User should see submit button correct spelling")
     public void submitButtonCorrectSpelling() {
-        Assert.assertEquals(loginPage.verifySubmitButton(), true);
+        Assert.assertTrue(loginPage.verifySubmitButton());
     }
 
     @And("User is connected to his account")
@@ -60,7 +60,7 @@ public class LoginSteps {
 
     @Then("User should correct presentation spelling")
     public void userShouldCorrectPresentationSpelling() {
-        Assert.assertEquals(loginPage.verifyPresentationText(), true);
+        Assert.assertTrue(loginPage.verifyPresentationText());
     }
 
     @And("User try to connect to his account")
@@ -71,7 +71,7 @@ public class LoginSteps {
 
     @Then("User access to his account")
     public void accessToHisAccount() {
-        Assert.assertEquals(loginPage.verifyAccountAccess(), true);
+        Assert.assertTrue(loginPage.verifyAccountAccess());
     }
 
     @When("User look this page")
