@@ -7,6 +7,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class LoginPage extends Page{
 
@@ -65,6 +66,7 @@ public class LoginPage extends Page{
         isVerified  = validSpellingText();
         if(isConnected == 0){
             click(startButton);
+            shortWaitUntil(visibilityOfAllElements());
         }
     }
 
