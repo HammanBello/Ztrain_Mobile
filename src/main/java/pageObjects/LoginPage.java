@@ -84,10 +84,10 @@ public class LoginPage extends Page{
     }
 
     public void connexion(){
-        if (isConnected == 0){
+
                     getLogged();
                     goOnDashboard();
-                      }
+
 
 
  //           isConnected++;
