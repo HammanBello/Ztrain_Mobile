@@ -1,0 +1,207 @@
+#style_popular_product_wrapper__z6J0h > div:nth-child(1) > div.style_card_footer__q1lbJ > p
+
+#style_popular_product_wrapper__z6J0h > div:nth-child(1) > div.style_card_footer__q1lbJ > button
+
+#style_popular_product_wrapper__z6J0h > div:nth-child(1) > div.style_card_body__QuFGN
+
+#style_popular_product_wrapper__z6J0h > div:nth-child(1) > div.style_card_body__QuFGN
+
+
+
+#style_totalPrice__o2yCy > h5:nth-child(2)
+
+https://ztrain-web.vercel.app/auth/register
+
+
+#style_content_form__yXJox > p:nth-child(3)
+#style_content_form__yXJox > p
+#style_content_form__yXJox > p:nth-child(5)
+
+#style_popular_product_wrapper__z6J0h > div:nth-child(12)
+
+#style_popular_product_wrapper__z6J0h > div:nth-child(12) > div.style_card_body__QuFGN
+
+
+https://artsandculture.google.com/experiment/puzzle-party/EwGBPZlIzv0KRw?cp=eyJwdXp6bGVJZCI6Il9pbDBxNG9uZmciLCJnYWxsZXJ5IjpudWxsfQ
+https://artsandculture.google.com/experiment/puzzle-party/EwGBPZlIzv0KRw?cp=eyJwdXp6bGVJZCI6Il83Zjh2cHJoeG4iLCJnYWxsZXJ5IjpudWxsfQ
+
+
+le chariot 
+	
+com.kikuu:id/tab_cart_img
+
+le lien se connecter
+accessibility id
+Se connecter
+<android.widget.LinearLayout content-desc="Se connecter">
+
+telephone mail compte
+com.kikuu:id/et_account
+
+password field
+com.kikuu:id/et_password
+
+button se connecter
+com.kikuu:id/login_submit_btn
+
+icone mon compte
+com.kikuu:id/tab_kikuu_img
+
+header d'un gars deco
+com.kikuu:id/m3_profile_user_avatar_parent_layout
+
+
+https://github.com/HammanBello/appiumTests.git
+
+{
+  "appActivity": "com.kikuu.t.SplashT",
+  "appPackage": "com.kikuu",
+  "deviceName": "emulator-5554",
+  "platformName": "Android",
+  "platformVersion": "11",
+  "noReset": true
+}
+	
+zeufackp@gmail.com
+007hermann
+{
+  "deviceName": "emulator-5554",
+  "platformName": "Android",
+  "platformVersion": "9"
+}
+
+[{"key":"elementId","value":"5eac4047-35e4-41aa-b944-c4f2887e262a","name":"elementId"},{"key":"index","value":"1","name":"index"},{"key":"package","value":"com.kikuu","name":"package"},{"key":"class","value":"android.widget.TextView","name":"class"},{"key":"text","value":"Cameroon","name":"text"},{"key":"resource-id","value":"com.kikuu:id/country_txt","name":"resource-id"},{"key":"checkable","value":"false","name":"checkable"},{"key":"checked","value":"false","name":"checked"},{"key":"clickable","value":"false","name":"clickable"},{"key":"enabled","value":"true","name":"enabled"},{"key":"focusable","value":"false","name":"focusable"},{"key":"focused","value":"false","name":"focused"},{"key":"long-clickable","value":"false","name":"long-clickable"},{"key":"password","value":"false","name":"password"},{"key":"scrollable","value":"false","name":"scrollable"},{"key":"selected","value":"false","name":"selected"},{"key":"bounds","value":"[133,1862][1039,1921]","name":"bounds"},{"key":"displayed","value":"true","name":"displayed"}]
+
+
+Cloud testing , lancer des test sur plusieurs os a la fois, un peu comme sélénium grid
+
+
+Cloud testing , lancer des test sur plusieurs os a la fois, un peu comme sélénium grid
+
+
+git token 
+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
+https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
+https://github.com/HammanBello/appiumInstantGamingTest.git 
+https://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@github.com/HammanBello/appiumInstantGamingTest.git 
+
+
+BVUMZBLKPBZVTW
+emulator -avd Pixel_2_API_28
+emulator -avd Pixel_3a_API_30
+adb devices
+adb shell dumpsys window windows
+List of devices attached
+f1d7d55d        device
+emulator-5554   device
+
+
+C:\Users\hambe\Desktop>newman run ZTrain.postman_collection.json -e Z-TRAIN.postman_environment.json -r htmlextra --reporter-htmlextra-displayProgressBar --reporter-htmlextra-browserTitle "ZTRAIN REPORT" --reporter-htmlextra-title "ZTRAIN REPORT"
+
+# Points à revoir
+
+- Ajouter les dossiers "`local_driver`" et "`allure_results`" dans le *.gitignore*
+- Il faut bien indenter ton code
+
+- Il faut réorganiser tes features. Ce n'est pas un Scenario $=>$ une Feature. Une feature comme son nom l'indique renvoie à une fonctionnalité. Donc tu ne peux pas avoir deux cas de test d'une même fonctionnalité dans deux features différentes. Par exemple les features liées à la connexion
+- Tu n'utilises pas correctement les méthodes `*waitUntil()`. Elles sont implémentées telles que l'exception qu'elles sont sensées générer est capturer et à la place on retourne *false*. Mais tu ne sers pas du retour de la méthode pour t'assurer que la condition soit remplie avant d'intéroger l'élément.
+- Method `emailErrorMsgVerification()`
+- Les locators
+- Partout où utilises `System.out.println()`, il faut utiliser le logger à la place
+
+
+
+Cloud testing , lancer des test sur plusieurs os a la fois, un peu comme sélénium grid
+
+pre emploi
+automaticien
+monter en competence
+fonctionnelle (processus de test isTqb
+techniques
+automatisation des tests
+outils d'automatisation
+selinium apium
+M.Nana
+
+
+comment creer de la valeur pour mon ecole ?
+
+cod mobile 
+BVUMZBLKPBZVTW
+
+https://docs.google.com/spreadsheets/d/1RU3KpC0jZGzWKeCrV_5KCCjdalm45O88q9CUkpdCzNg/edit?usp=sharing
+
+1. Completude et coherence
+2. Mapping entre le modele et le code
+
+deux classes ne communiquent pas si elle ne sont pas liées ds le diagrame de classe
+
+BaybayPandaToyz
+Limsy1
+poro with cookie
+
+l3_inge3_srt@1234
+
+ID: PouletSupport
+MDP: 1Merveille.
+
+T2CJ
+Chouchou123#
+
+Twzhyqtt11#
+LeZongo
+
+pouletwukong
+Execution7
+
+Match 1
+Avant la partie
+: non
+En jeu
+: mouf
+: ferme ca
+: pute
+: silver
+: tu es ou ?
+: plastic ?
+: XD
+: GG
+: PAS DE R
+: JE LAG FLOP
+: ON FF
+: CA VAUT PAS LA PEINE
+: ECRIS VITE
+: STORZEN
+: BACK
+: ON BUY LA MOBILITé
+: on trolle
+: buy la mobilité
+: bientot 15
+: ez
+: report lkux
+: report LUX
+: WTF
+: ¨PUTE
+: On chill tu ns derange
+: ez
+Après la partie
+: Prop
+
+---------------AP1 ---------------
+
+SSID: L3_INGE5_ISI
+
+Password: l3_inge5_isi@2022
+
+
+
+---------------AP2 ---------------
+
+SSID: L3_INGE4_ISI
+
+Password: l3_inge4_isi@1234
+
+nU7wJ5BUgHw8BcJ
+
+code de recup bdo 
+CEFC19A397EC469C

@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         plugin = {
                 "pretty",
-                "html:target/reports/html/htmlreport",
+                "html:target/reports/html/htmlreport.html",
                 "json:target/reports/jsonreports/index.json",
                 "junit:target/reports/xmlreport.xml",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
